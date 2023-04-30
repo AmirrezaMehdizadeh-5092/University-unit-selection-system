@@ -1,0 +1,227 @@
+.header {
+    height: 100px;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid green;
+}
+
+.header .right h1 {
+    text-shadow: 0 0 10px rgb(91, 229, 229);
+    padding-right: 100px;
+}
+
+.header .left {
+    padding-left: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .left .info {
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .left .id {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+#name {
+    color: rgb(90, 90, 234);
+}
+
+.main {
+    height: 650px;
+}
+
+.error {
+    position: relative;
+}
+
+.error h3 {
+    position: absolute;
+    left: -1400px;
+    color: rgb(177, 5, 5);
+}
+
+.main .title {
+    float: right;
+    height: 650px;
+    width: 5%;
+    display: flex;
+    justify-content: left;
+    align-items: right;
+}
+
+.main .title .text {
+    transform: rotate(90deg);
+    height: 75px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(168, 232, 255, 0.342);
+}
+
+.main .title .text h3 {
+    color: #676363;
+}
+
+.main .dashboard {
+    height: 650px;
+    background-color: white;
+    width: 10%;
+    float: right;
+    margin-right: 1px;
+    border: 1px solid #a8a8a8;
+}
+
+/* main div1 personal */
+
+.main .dashboard .personal {
+    background-color: rgba(187, 238, 255, 0.685);
+    height: 50px;
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main .dashboard .personal:hover {
+    background-color: rgb(11, 185, 243);
+    transition: 0.3s;
+    box-shadow: 0 0 3px rgb(163, 92, 163);
+}
+
+/* main div2 classlist */
+
+.main .dashboard .defclasslist {
+    background-color: rgba(187, 238, 255, 0.685);
+    height: 50px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.main .dashboard .defclasslist h5 {
+    cursor: pointer;
+    padding: 18px 55px;
+    border-radius: 5px;
+}
+
+.main .dashboard .defclasslist .defmasterkesho {
+    height: 225px;
+    position: absolute;
+    top: -5px;
+    right: 160px;
+    visibility: hidden;
+    width: 151px;
+    border-radius: 5px;
+}
+
+.main .dashboard .defclasslist h5:hover {
+    background-color: rgb(11, 185, 243);
+    transition: 0.3s;
+    box-shadow: 0 0 3px rgb(163, 92, 163);
+}
+
+/* content main div1 */
+
+.main .content-dashboard #show-personal {
+    float: left;
+    height: 650px;
+    width: 84.9%;
+    visibility: hidden;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .content-dashboard #show-personal .btn_personal {
+    position: absolute;
+    margin-top: -630px;
+    margin-right: -1245px;
+    cursor: pointer;
+}
+
+.main .content-dashboard #show-personal .info {
+    height: 600px;
+    background-color: pink;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 500px;
+    border: 1px solid #a8a8a8;
+    padding-right: 25px;
+}
+
+.main .content-dashboard #show-personal .setdisplay {
+    display: flex;
+}
+
+/* content main div2 */
+
+.main .content-dashboard #show-classlist {
+    position: relative;
+}
+
+.main .content-dashboard #show-classlist button {
+    position: absolute;
+    margin-top: -1070px;
+    margin-right: -1240px;
+    cursor: pointer;
+}
+
+.main .content-dashboard #show-classlist #classlist {
+    float: left;
+    height: 1000px;
+    width: 84.7%;
+    position: absolute;
+    top: 45px;
+    right: 228px;
+    transition: 0.3s;
+    visibility: hidden;
+    display: flex;
+    background-color: #e1e1e1c0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border: 2px solid rgb(64, 222, 64);
+    justify-content: center;
+    align-items: center;
+}
+
+.main .content-dashboard #show-classlist #classlist ul
+{
+    list-style: none;
+}
+
+.main .content-dashboard #show-classlist #classlist ul li
+{
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.main .content-dashboard #show-classlist #classlist #classlist-item {
+    float: left;
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    border: 1px solid black;
+    top: 45px;
+    right: 232px;
+}

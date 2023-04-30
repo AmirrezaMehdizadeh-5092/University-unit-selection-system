@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="admin_panel.css">
+    <title>پنل ادمین</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="right">
+            <h1>پنل کارمندان</h1>
+        </div>
+        <div class="left">
+            <div class="info">
+                <h3>نام و نام خانوادگی : </h3>
+                <h3 id="name">
+                    <%= fname %>
+                </h3>
+                <h3 id="name">
+                    <%= lname %>
+                </h3>
+            </div>
+            <div class="id">
+                <h3>شناسه : </h3>
+                <h3 id="name">
+                    <%= pass %>
+                </h3>
+            </div>
+            <div class="job">
+                <h3>سمت : </h3>
+                <h3 id="name">
+                    <%= job %>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="title">
+            <div class="text">
+                <h3>داشبورد</h3>
+            </div>
+            <div class="error">
+                <h3>
+                    <%= error %>
+                </h3>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div onclick="show('show-personal')" class="personal">
+                <h5>شخصی</h5>
+            </div>
+            <div onmouseleave="close_kesho_teacher()" onmousemove="open_kesho_teacher()" class="defmaster sec2">
+                <h5 id="kesho_teacher">اساتید</h5>
+                <div onmouseleave="close_kesho_teacher()" id="defmasterkesho" class="defmasterkesho">
+                    <div id="master_zirmenu" onclick="open_teacher('#show_teacher')">
+                        <h6>مشاهده استاد</h6>
+                    </div>
+                    <div id="master_zirmenu" onclick="open_teacher('#define_teacher')">
+                        <h6>تعریف استاد</h6>
+                    </div>
+                    <div id="master_zirmenu" onclick="open_teacher('#del_teacher')">
+                        <h6>حذف استاد</h6>
+                    </div>
+                </div>
+            </div>
+            <div onmouseleave="close_kesho_student()" onmousemove="open_kesho_student()" id="kesho_student"
+                class="defstudent sec2">
+                <h5>دانشجویان</h5>
+                <div onmouseleave="close_kesho_student()" id="defstudentkesho" class="defstudentkesho">
+                    <div id="student_zirmenu" onclick="open_student('#show_student')">
+                        <h6>مشاهده دانشجو</h6>
+                    </div>
+                    <div id="student_zirmenu" onclick="open_student('#define_student')">
+                        <h6>تعریف دانشجو</h6>
+                    </div>
+                    <div id="student_zirmenu" onclick="open_student('#del_student')">
+                        <h6>حذف دانشجو</h6>
+                    </div>
+                </div>
+            </div>
+            <div onmouseleave="close_kesho_class()" onmousemove="open_kesho_class()" id="kesho_class"
+                class="defclass sec2">
+                <h5>کلاس ها</h5>
+                <div onmouseleave="close_kesho_class()" id="defclasskesho" class="defclasskesho">
+                    <div id="class_zirmenu" onclick="open_class('#show_class')">
+                        <h6>مشاهده کلاس</h6>
+                    </div>
+                    <div id="class_zirmenu" onclick="open_class('#define_class')">
+                        <h6>تعریف کلاس</h6>
+                    </div>
+                    <div id="class_zirmenu" onclick="open_class('#del_class')">
+                        <h6>حذف کلاس</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-dashboard">
+            <div id="show-personal">
+                <button class="btn_personal" onclick="hide('show-personal')">بستن</button>
+                <div class="info">
+                    <div class="setdisplay">
+                        <h3>نام : </h3>
+                        <h3 id="name">
+                            <%= fname %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3>نام خانوادگی : </h3>
+                        <h3 id="name">
+                            <%= lname %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3>کد ملی : </h3>
+                        <h3 id="name">
+                            <%= user %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3> کد پرسنلی : </h3>
+                        <h3 id="name">
+                            <%= pass %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3> مدرک : </h3>
+                        <h3 id="name">
+                            <%= madrak %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3> سمت : </h3>
+                        <h3 id="name">
+                            <%= job %>
+                        </h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content-teacher">
+                <div id="show_teacher" class="show_teacher">
+                    <button onclick="close_teacher('#show_teacher')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="number" name="sh_teacher_code_meli" placeholder="کد ملی استاد را وارد کیند"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="sh_teacher_code_per" placeholder="کد پرسنلی استاد را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="نمایش">
+                        </div>
+                    </form>
+                </div>
+                <div id="define_teacher" class="define_teacher">
+                    <button onclick="close_teacher('#define_teacher')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="text" name="def_teacher_fname" placeholder="نام " required>
+                        </div>
+                        <div class="form">
+                            <input type="text" name="def_teacher_lname" placeholder="نام خانوادگی" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_teacher_code_meli" placeholder="کد ملی (10 رقم باشد)"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_teacher_code_per" placeholder="کد پرسنلی (10 رقم باشد)"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="text" name="def_teacher_madrak" placeholder="مدرک" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_teacher_year" placeholder="سال" required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="تایید">
+                        </div>
+                    </form>
+                </div>
+                <div id="del_teacher" class="del_teacher">
+                    <button onclick="close_teacher('#del_teacher')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="number" name="del_teacher_code_meli" placeholder="کد ملی استاد را وارد کیند"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="del_teacher_code_per" placeholder="کد پرسنلی استاد را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="اعمال">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="content-student">
+                <div class="show_student" id="show_student">
+                    <button onclick="close_student('#show_student')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="number" name="sh_student_code_meli" placeholder="کد ملی دانشجو را وارد کیند"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="sh_student_shd" placeholder="شماره دانشجویی را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="نمایش">
+                        </div>
+                    </form>
+                </div>
+                <div class="define_student" id="define_student">
+                    <button onclick="close_student('#define_student')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="text" name="def_student_fname" placeholder="نام " required>
+                        </div>
+                        <div class="form">
+                            <input type="text" name="def_student_lname" placeholder="نام خانوادگی" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_student_code_meli" placeholder="کد ملی (10 رقم باشد)"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_student_shd" placeholder=" شماره دانشجویی (10 رقم باشد)"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="text" name="def_student_reshte" placeholder="رشته" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_student_age" placeholder="سن" required>
+                        </div>
+                        <div class="form">
+                            <input type="text" name="def_student_address" placeholder="آدرس" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_student_year" placeholder="سال ورود" required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="تایید">
+                        </div>
+                    </form>
+                </div>
+                <div class="del_student" id="del_student">
+                    <button onclick="close_student('#del_student')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="number" name="del_student_code_meli" placeholder="کد ملی دانشجو را وارد کیند"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="del_student_shd" placeholder="شماره دانشجویی را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="اعمال">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="content-class">
+                <div class="show_class" id="show_class">
+                    <button onclick="close_class('#show_class')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="number" name="sh_class_classcode" placeholder="کد کلاس را وارد کیند" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="sh_class_groh" placeholder="شماره گروه کلاس را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="نمایش">
+                        </div>
+                    </form>
+                </div>
+                <div class="define_class" id="define_class">
+                    <button onclick="close_class('#define_class')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="text" name="def_class_name" placeholder="نام کلاس" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_class_code" placeholder="کد کلاس (6 رقم باشد)" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_class_groh" placeholder="گروه کلاس (1 رقم باشد)"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_class_zarfiat" placeholder="ظرفیت" required>
+                        </div>
+                        <div class="form">
+                            <input type="text" name="def_class_time" placeholder="زمان" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="def_class_teacher_name" placeholder="کد استاد" required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="تایید">
+                        </div>
+                    </form>
+                </div>
+                <div class="del_class" id="del_class">
+                    <button onclick="close_class('#del_class')">بستن</button>
+                    <form action="" method="post">
+                        <div class="form">
+                            <input type="number" name="del_class_classcode" placeholder="کد کلاس را وارد کیند" required>
+                        </div>
+                        <div class="form">
+                            <input type="number" name="del_class_groh" placeholder="شماره گروه کلاس را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form">
+                            <input id="submit" type="submit" value="اعمال">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="main.js"></script>
+<script src="teacher.js"></script>
+<script src="student.js"></script>
+<script src="class.js"></script>
+
+
+
+</html>

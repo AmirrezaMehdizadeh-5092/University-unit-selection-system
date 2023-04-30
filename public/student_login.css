@@ -1,0 +1,162 @@
+body {
+    background-color: #e1e1e1af;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    width: 100%;
+}
+
+.main .child_main {
+    height: 600px;
+    width: 800px;
+    background-color: white;
+}
+
+.main .child_main .left {
+    height: 600px;
+    float: left;
+    width: 350px;
+    background-color: #226591;
+}
+
+.main .child_main .left hr {
+    margin-top: 500px;
+    background-color: gray;
+    color: gray;
+    size: 1em;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.main .child_main .left p {
+    font-size: 11px;
+    margin-left: 10px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 25px;
+    color: white;
+}
+
+.main .child_main .right .errorhandle
+{
+    height: 75px;
+    margin-top: -75px;
+    width: 450px;
+    position: absolute;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main .child_main .right .errorhandle span
+{
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 21px;
+   color: red;
+
+}
+
+.main .child_main .right h2 {
+    margin-top: 125px;
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+form .input {
+    height: 50px;
+    width: 375px;
+    border: 2px solid #c2bdbd;
+    text-align: right;
+    font-size: 15px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+form .input::placeholder {
+    text-align: right;
+}
+
+form i {
+    position: absolute;
+}
+
+form #i1 {
+    color: #c5c2c2;
+    margin-right: 375px;
+    margin-top: -63px;
+    font-size: 1.5em;
+}
+
+form #i2 {
+    color: #c5c2c2;
+    margin-right: 377px;
+    margin-top: -63px;
+    font-size: 1.7em;
+}
+
+form #i4 {
+    color: black;
+    margin-right: 250px;
+    margin-top: 15px;
+    font-size: 1.7em;
+    cursor: pointer;
+}
+
+form #i3 {
+    color: #c5c2c2;
+    margin-right: 380px;
+    margin-top: -63px;
+    font-size: 1.7em;
+}
+
+form .code_box {
+    height: 60px;
+    width: 180px;
+    border-radius: 4px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    background-image: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px, yellow 10px, yellow 20px);
+    justify-content: center;
+}
+
+form .code_box h3 {
+    letter-spacing: 18px;
+}
+
+form .submit {
+    height: 45px;
+    text-align: center;
+    width: 175px;
+    background-color: #3394d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-right: 41px;
+    cursor: pointer;
+}
+
+form .submit:hover {
+    transition: 0.3s;
+    background-color: #5614f0;
+}
+
+form .forget {
+    margin-right: 75px;
+    font-size: 14px;
+}
+
+form .forget:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="teacher_panel.css">
+    <title>پنل اساتید</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="right">
+            <h1>پنل اساتید</h1>
+        </div>
+        <div class="left">
+            <div class="info">
+                <h3>نام و نام خانوادگی : </h3>
+                <h3 id="name">
+                    <%= fname %>
+                </h3>
+                <h3 id="name">
+                    <%= lname %>
+                </h3>
+            </div>
+            <div class="id">
+                <h3>شناسه : </h3>
+                <h3 id="name">
+                    <%= pass %>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="title">
+            <div class="text">
+                <h3>داشبورد</h3>
+            </div>
+            <div class="error">
+                <h3>
+                    <%= error %>
+                </h3>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div onclick="show('show-personal')" class="personal">
+                <h5>شخصی</h5>
+            </div>
+            <div onclick="show('classlist')" class="defclasslist sec2">
+                <h5>لیست دروس</h5>
+            </div>
+        </div>
+        <div class="content-dashboard">
+            <div id="show-personal">
+                <button class="btn_personal" onclick="hide('show-personal')">بستن</button>
+                <div class="info">
+                    <div class="setdisplay">
+                        <h3>نام : </h3>
+                        <h3 id="name">
+                            <%= fname %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3>نام خانوادگی : </h3>
+                        <h3 id="name">
+                            <%= lname %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3>کد ملی : </h3>
+                        <h3 id="name">
+                            <%= user %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3> کد پرسنلی : </h3>
+                        <h3 id="name">
+                            <%= pass %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3> مدرک : </h3>
+                        <h3 id="name">
+                            <%= madrak %>
+                        </h3>
+                    </div>
+                    <div class="setdisplay">
+                        <h3> سال شروع به تدریس : </h3>
+                        <h3 id="name">
+                            <%= year %>
+                        </h3>
+                    </div>
+
+                </div>
+            </div>
+            <div id="show-classlist">
+                <div id="classlist">
+                    <button class="btn_classlist" onclick="hide('classlist')">بستن</button>
+                    <ul>
+                        <% classlist_teacher.forEach(i=>{ %>
+                            <li>
+                                <br>
+                                <span>نام کلاس: </span><span>
+                                    <%= i.class_name %>
+                                </span>
+                                <br>
+                                <br>
+                                <span>کد کلاس: </span><span>
+                                    <%= i.code_class %>
+                                </span>
+                                <br>
+                                <br>
+                                <span> شماره گروه: </span><span>
+                                    <%= i.group %>
+                                </span>
+                                <br>
+                                <br>
+                                <span>ظرفیت : </span><span>
+                                    <%= i.zarfiat %>
+                                </span>
+                                <br>
+                                <br>
+                                <span> تعداد: </span><span>
+                                    <%= i.tedad %>
+                                </span>
+                                <br>
+                                <br>
+                                <span> وضعیت: </span><span>
+                                    <%= i.status %>
+                                </span>
+                                <br>
+                                <br>
+                                <span> ساعت برگزاری: </span><span>
+                                    <%= i.time %>
+                                </span>
+                                <br>
+                                <br>
+                            </li>
+                            <hr>
+                            <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="main.js"></script>
+
+</html>

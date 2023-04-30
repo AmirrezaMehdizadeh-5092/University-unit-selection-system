@@ -1,0 +1,19 @@
+@font-face {
+    font-family: iran;
+    src: url(./iran.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: iran;
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}

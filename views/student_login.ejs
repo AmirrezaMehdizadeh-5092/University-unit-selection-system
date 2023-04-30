@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="student_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>پورتال دانشجویان</title>
+</head>
+
+<body onload="generate_code()">
+    <div class="main">
+        <div class="child_main">
+            <div class="left">
+                <hr>
+                <p>
+                    هر گونه سوء استفاده از این سایت به استناد آیین نامه تخلفات رایانه ای تحت پیگرد قانونی قرار خواهد
+                    گرفت.</p>
+            </div>
+            <div class="right">
+                <div class="errorhandle">
+                    <span><%= error %> </span>
+                </div>
+                <h2>پورتال دانشجویان</h2>
+                <form action="" method="post">
+                    <input class="input" type="text" placeholder="نام کاربری" name="username" required id="in1">
+                    <i id="i1" class="fa fa-user-circle "></i>
+                    <input class="input" type="password" placeholder="رمز عبور" name="password" required id="in2">
+                    <i id="i2" class="fa fa-lock"></i>
+                    <input class="input" type="text" placeholder="کد امنیتی" name="security" required id="in3">
+                    <input type="hidden" id="hidden" name="hidden">
+                    <i id="i3" class="fa fa-info"></i>
+                    <div class="code_box">
+                        <h3 id="code"></h3>
+                        <i onclick="generate_code()" id="i4" class="fa fa-refresh"></i>
+                    </div>
+                    <input class="submit" type="submit" value="ورود">
+                    <a href="/student_forget" class="forget">فراموشی رمز عبور</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function generate_code() {
+        min = Math.ceil(10000);
+        max = Math.floor(99999);
+        rand = Math.floor(Math.random() * (max - min) + min);
+        document.getElementById("code").innerText = rand;
+        let a = document.querySelector("#hidden");
+        a.value = rand;
+    }
+</script>
+
+</html>

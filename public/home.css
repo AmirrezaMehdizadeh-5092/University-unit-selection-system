@@ -1,0 +1,94 @@
+.header {
+    height: 100px;
+    width: 1535px;
+    background-color: #9b59b6;
+    position: relative;
+}
+
+.header h1 {
+    margin-right: 75px;
+    margin-top: 25px;
+    position: absolute;
+    text-shadow: 0 0 10px rgb(91, 229, 229)
+}
+
+.main {
+    width: 100%;
+    height: 650px;
+    background-color: rgba(0, 255, 255, 0.422);
+    display: flex;
+    justify-content: space-around;
+}
+
+.student {
+    height: 560px;
+    width: 450px;
+    margin-right: 20px;
+    margin-top: 35px;
+}
+
+.student img {
+    width: 400px;
+    margin-top: 40px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student a {
+    margin-right: 150px;
+    margin-top: -25px;
+    text-decoration: none;
+}
+
+.teacher {
+    height: 560px;
+    width: 450px;
+    margin-right: 20px;
+    margin-top: 75px;
+}
+
+.teacher img {
+    width: 360px;
+    margin-top: 40px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.teacher a {
+    margin-right: 180px;
+    margin-top: -25px;
+    text-decoration: none;
+}
+
+.admin {
+    height: 560px;
+    width: 450px;
+    margin-right: 20px;
+    margin-top: 85px;
+}
+
+.admin img {
+    width: 310px;
+    margin-top: 40px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-right: 50px;
+
+}
+
+.admin a {
+    margin-right: 150px;
+    margin-top: 25px;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: #666;
+    font-weight: bold;
+}
